@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Calculator</title>
+    <style type="text/css">    
+     html, body{       height: 100%; 
+         } 
+          .full-page{  
+               height: 100vh; 
+              width: 100vw;     } 
+      body
+      {
+        background-color:rgb(214,214,214);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      .container
+      {
+        
+        border-radius: 10px;
+        background-color:rgb(214,214,214);
+        width:350px;
+        margin:180px auto;
+        height:500px;
+        box-shadow:5px 5px 10px #b6a9a9,-5px -5px 10px #ffffff;
+
+      }
+      .calcs
+      {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin:20px auto;
+        
+
+      }
+      #display
+      {
+        height:65px;
+        width:330px;
+        background:transparent;
+        border-radius:8px;
+        box-shadow:inset 2px 2px 5px #babecc,inset -5px -5px 10px #ffffff;
+        border:none;
+        text-align:right;
+        font-weight:600;
+        padding:15px;
+      }
+      .button
+      {
+        margin:20px 15px 0 10px;
+        width:50px;
+        height:42px;
+        border:none;
+        outline:none;
+        font-size:18px;
+        font-weight:bold;
+        cursor:pointer;
+        border-radius:8px;
+        background:rgb(214,214,214);
+        box-shadow:5px 5px 10px #b6acac,-5px -5px 10px #faf4f4;
+   display:inline-block;
+      }
+      
+      .buttons
+      {
+        color:white;
+        background:black;
+         margin:20px 15px 0 10px;
+        width:50px;
+        height:42px;
+        border:none;
+        outline:none;
+        font-size:18px;
+        font-weight:bold;
+        cursor:pointer;
+        border-radius:5px;
+       
+        box-shadow:5px 5px 10px #b6acac,-5px -5px 10px #faf4f4;
+   display:inline-block;
+      }
+      .buttonss
+      {
+        color:white;background:red;
+         margin:20px 15px 0 10px;
+        width:130px;
+        height:42px;
+        border:none;
+        outline:none;
+        font-size:18px;
+        font-weight:bold;
+        cursor:pointer;
+        border-radius:5px;
+      
+        box-shadow:5px 5px 10px #b6acac,-5px -5px 10px #faf4f4;
+   display:inline-block;
+      }
+      .button:active
+      {
+        box-shadow: inset 1px 1px 2px #babeec,inset -1px -1px 2px #ffffff;
+      }
+      
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+<form name="calc">
+      <div class="calcs">
+        <input type="text" id="display" name="display"placeholder="0">
+        <br>
+      </div>
+        <div class="inputss">
+        <div class="first">
+        <input type="button" class="buttons" value="C" onclick="calc.display.value=''">
+         <input type="button" class="buttons"value="%" onclick="calc.display.value/=100">
+        
+        <input type="button" class="buttons" value="/"onclick="calc.display.value+='/'" >
+        <input type="button" value="." class="buttons"onclick="calc.display.value+= '.'" >
+      </div>
+        <div class="sec">
+        <input type="button" value="7" class="button"onclick="calc.display.value+='7'">
+        <input type="button" value="8" class="button" onclick="calc.display.value+='8'">
+        <input type="button" value="9" class="button" onclick="calc.display.value+='9'">
+        <input type="button" value="x" class="buttons"onclick="calc.display.value+='*'">
+        </div>
+        <div class="third">
+        <input type="button" value="4" class="button" onclick="calc.display.value+='4'">
+        <input type="button" value="5" class="button" onclick="calc.display.value+='5'">
+        <input type="button" value="6" class="button" onclick="calc.display.value+='6'">
+        <input type="button" value="-" class="buttons" onclick="calc.display.value+='-' ">
+        </div>
+        <div class="fourth">
+        <input type="button" value="1" class="button" onclick="calc.display.value+='1'">
+        <input type="button" value="2" class="button" onclick="calc.display.value+='2'">
+        <input type="button" value="3" class="button"onclick="calc.display.value+='3'">
+        <input type="button" value="+" class="buttons" onclick="calc.display.value+='+'">
+        </div>
+        <div class="fifth">
+         
+        <input type="button" value="0" class="button" onclick="calc.display.value+='0'">
+        <input type="button" value="DEL" class="button"onclick="calc.display.value= calc.display.value.substr(0,calc.display.value.length-1)" >
+        <input type="button" value="=" class="buttonss" onclick="calc.display.value=eval(calc.display.value)" >
+      </div>
+        
+      </div>
+</form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+  
+    </script>
+  </body>
+</html>
